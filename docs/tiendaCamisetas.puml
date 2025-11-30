@@ -1,0 +1,80 @@
+@startuml
+' -----------------------
+' Definición de Clases
+' -----------------------
+
+' Clase Usuario
+class Usuario {
+    - username: String
+    - passwordHash: String
+    - email: String
+    - telefono: String
+    - nombre: String
+    - apellidos: String
+    - direcciones: List<Direccion>
+    - rol: Rol
+}
+
+' Clase Direccion
+class Direccion {
+    - tipoVia: String
+    - nombreVia: String
+    - numero: String
+    - portal: String
+    - puerta: String
+    - cp: String
+    - poblacion: String
+    - municipio: String
+    - provincia: String
+    - pais: String
+    - telefono: String
+    - porDefecto: Boolean
+}
+
+enum Rol {
+    CLIENTE
+    OPERARIO
+    ADMIN
+}
+
+' Clase Producto
+class Producto {
+    - idProducto: String
+    - nombre: String
+    - descripcion: String
+    - numero: Int
+    - precio: Float
+}
+
+' Clase Pedido
+class Pedido {
+    - numeroPedido: String
+    - productos: List<ProductoPedido>
+    - direccionEnvio: Direccion
+    - fechaRecepcion: Date
+    - estado: EstadoPedido
+}
+
+' Clase ProductoPedido (relación entre Pedido y Producto con cantidad y precio)
+class ProductoPedido {
+    - producto: Producto
+    - cantidad: Int
+    - precioUnitario: Float
+}
+
+enum EstadoPedido {
+    RECIBIDO
+    EN_PREPARACION
+    ENVIADO
+}
+
+' -----------------------
+' Relaciones
+' -----------------------
+
+Usuario "1" -- "0..*" Direccion
+Usuario "1" -- "0..*" Pedido
+Pedido "1" -- "0..*" ProductoPedido
+ProductoPedido "1" -- "1" Producto
+
+@enduml
