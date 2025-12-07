@@ -8,21 +8,23 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @NoArgsConstructor
-
-public class Camiseta {
+public class Direccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String tipoVia;
+    private String nombreVia;
+    private String numero;
+    private String planta;
+    private String puerta;
+    private String portal;
     private String nombre;
-    private String descripcion;
-    private String talla;
-    private float precio;
-    private int stock;
-    
+    @ManyToOne    
+    private CodigoPostal codigoPostal;
     @ManyToOne
-    private Categoria categoria;
+    private Usuario usuario;
 }

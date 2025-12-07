@@ -11,18 +11,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-
-public class Camiseta {
+public class Telefono {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private Long codigoPais;
+    private Long numero;
     private String nombre;
-    private String descripcion;
-    private String talla;
-    private float precio;
-    private int stock;
-    
     @ManyToOne
-    private Categoria categoria;
+    private Usuario usuario;
 }
