@@ -8,21 +8,18 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @NoArgsConstructor
-
-public class Camiseta {
+public class LineaPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String nombre;
-    private String descripcion;
-    private String talla;
-    private float precio;
-    private int stock;
-    
+    private Float precio;
+    private Integer cantidad;
     @ManyToOne
-    private Categoria categoria;
+    private Camiseta camiseta;
+    @ManyToOne
+    private Pedido pedido;
 }
