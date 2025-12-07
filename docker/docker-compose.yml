@@ -8,8 +8,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: camisetas
       MYSQL_DATABASE: springdb-camisetas
-      MYSQL_USER: camisetas_user
-      MYSQL_PASSWORD: camisetas_pass
+  
       
     ports:
       - "33306:3306"   # NAT: puerto real 33306 → puerto del contenedor 3306

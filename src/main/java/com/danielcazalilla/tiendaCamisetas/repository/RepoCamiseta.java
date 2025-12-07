@@ -8,5 +8,5 @@ import com.danielcazalilla.tiendaCamisetas.model.Categoria;
 
 @Repository
 public interface RepoCamiseta extends JpaRepository<Camiseta, Long> {
-    List<Camiseta> findByCategoria(Categoria categoria);
+    List<Camiseta> findByCategoria(Categoria padre);
 }
