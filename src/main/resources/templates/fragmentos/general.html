@@ -16,7 +16,12 @@
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/productos">Comprar</a></li>
                     <li><a href="/carro">Carrito</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <li th:if="${currentUser == null}"><a href="/login">Login</a></li>
+                    <li th:if="${currentUser != null}">
+                        <form th:action="@{/logout}" method="post" style="display:inline">
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -28,6 +33,10 @@
                 <li><a href="/ayuda">Ayuda</a></li>
                 <li><a href="/acerca">Acerca de</a></li>
             </ul>
+            <div th:if="${currentUser != null}">
+                <p>Logueado como: <strong th:text="${currentUser}">usuario</strong></p>
+            </div>
+
             <p>© 2025 Mi proyecto</p>
         </footer>
     </div>
