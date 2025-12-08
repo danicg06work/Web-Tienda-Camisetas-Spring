@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio - Tienda de Camisetas</title>
 </head>
 <body>
-    <div th:replace="~{fragmentos/general.html :: header}"> </div>
-    <div th:replace="~{fragmentos/general.html :: content}"> </div>
-    <div th:replace="~{fragmentos/general.html :: footer}"> </div>
+    <!-- HEADER -->
+    <div th:insert="~{fragmentos/general.html :: header}"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <h2>Bienvenido a nuestra tienda de camisetas!</h2>
+        <p>Aquí encontrarás las mejores camisetas para todos los gustos.</p>
+        <a href="/productos">Ver productos</a>
+    </main>
+
+    <!-- FOOTER -->
+    <div th:insert="~{fragmentos/general.html :: footer}"></div>
 </body>
 </html>

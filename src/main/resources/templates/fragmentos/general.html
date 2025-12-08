@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi proyecto</title>
 </head>
 
 <body>
-    <!-- CABEZERA -->
     <div th:fragment="header">
         <header>
             <nav>
@@ -16,20 +15,17 @@
                 <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/">Camisetas</a></li>
+                    <li><a href="/login">Login</a></li>
                 </ul>
             </nav>
         </header>
     </div>
-    <!-- CONTENIDO -->
-    <div th:fragment="content">
-        <p>CONTENIDO</p>
-    </div>
 
-    <!-- PIÉ -->
     <div th:fragment="footer">
-        <p>© 2025 Mi proyecto</p>
+        <footer>
+            <p>© 2025 Mi proyecto</p>
+        </footer>
     </div>
-
 </body>
 
 </html>

@@ -40,7 +40,7 @@ public class ControGeneral {
 
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return "auth/login";
     }
     
     @GetMapping("/ayuda")
@@ -64,7 +64,7 @@ public class ControGeneral {
 
     @GetMapping("/register")
     public String registerForm() {
-        return "register";
+        return "auth/register";
     }
     
     @PostMapping("/register")
