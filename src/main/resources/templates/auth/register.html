@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registro</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:insert="~{fragmentos/general.html :: header}"></div>
+
+    <!-- CONTENIDO -->
+    <main>
+        <h2>Registro de nuevo usuario</h2>
+
+        <div th:if="${registroError}">
+            <p style="color:red;" th:text="${registroError}"></p>
+        </div>
+
+        <form th:action="@{/register}" method="post">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required /><br/>
+            <label>Apellido:</label>
+            <input type="text" name="apellidos" required /><br/>
+            <label>Usuario:</label>
+            <input type="text" name="username" required /><br/>
+            <label>Email:</label>
+            <input type="email" name="email" required /><br/>
+            <label>Contraseña:</label>
+            <input type="password" name="password" required /><br/>
+            <label>Teléfono:</label>
+            <input type="number" name="telefono" /><br/>
+            <label>Código País:</label>
+            <input type="number" name="pais" /><br/>
+            <button type="submit">Registrarse</button>
+        </form>
+    </main>
+
+    <!-- FOOTER -->
+    <div th:insert="~{fragmentos/general.html :: footer}"></div>
+</body>
+</html>
