@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar dirección</title>
+</head>
+<body>
+  <div th:insert="~{../../fragmentos/general.html :: header}"></div>
+  <main>
+    <h2>Eliminar dirección</h2>
+    <p>¿Eliminar dirección <strong th:text="${telefono.numero}">direccion</strong> para <strong th:text="${usuario.username}">usuario</strong>?</p>
+    <form th:action="@{/admin/usuarios/{idUser}/direcciones/{idTel}/delete(idUser=${usuario.id},idTel=${telefono.id})}" method="post">
+      <button type="submit">Eliminar</button>
+    </form>
+  </main>
+  <div th:insert="~{../../fragmentos/general.html :: footer}"></div>
+</body>
+</html>

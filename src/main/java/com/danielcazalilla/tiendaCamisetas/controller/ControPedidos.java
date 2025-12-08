@@ -44,7 +44,7 @@ public class ControPedidos {
             "pedidos", repoPedido.findByEstado(Estado.REALIZADO));
 
         
-        return "/pedidos/pedidos";
+        return "pedido/pedidos";
     }
 
     private Usuario getLoggedUser() {
@@ -66,7 +66,7 @@ public class ControPedidos {
 
         modelo.addAttribute("pedido", oPedido.get());
         
-        return "/pedidos/servir";
+        return "pedido/detalle";
     }
 
     @PostMapping("/preparar/{id}")
@@ -96,7 +96,7 @@ public class ControPedidos {
         modelo.addAttribute("currentUrl", "/pedidos/en-preparacion");
         modelo.addAttribute("pedidos", pedidos);
 
-        return "/pedidos/pedidos";
+        return "pedido/pedidos";
     }
  
     @GetMapping("/en-preparacion/{id}")
@@ -108,7 +108,7 @@ public class ControPedidos {
 
         modelo.addAttribute("pedido", oPedido.get());
         
-        return "/pedidos/servir";        
+        return "pedido/detalle";        
     }
 
     @PostMapping("/en-preparacion/{id}")
@@ -138,7 +138,7 @@ public class ControPedidos {
         modelo.addAttribute("currentUrl", "/pedidos/en-preparacion");
         modelo.addAttribute("pedidos", pedidos);
 
-        return "/pedidos/pedidos";
+        return "pedido/pedidos";
     }
 
     @GetMapping("/mis-pedidos")
@@ -150,7 +150,7 @@ public class ControPedidos {
 
         modelo.addAttribute("pedidos", pedidos);
         
-        return "pedidos/pedidos";
+        return "pedido/pedidos";
     }
     
 }

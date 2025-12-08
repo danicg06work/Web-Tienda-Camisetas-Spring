@@ -62,7 +62,7 @@ public class ControCarrito {
     }
 
    
-    @GetMapping("/camisetas")
+    @GetMapping({"/camisetas","/productos"})
     public String findAll(Model modelo) {
         List<Camiseta> camisetas = repoCamiseta.findAll();
         camisetas.removeIf(camiseta -> camiseta.getStock()==0);

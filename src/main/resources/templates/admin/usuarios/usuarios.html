@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar usuarios</title>
+</head>
+<body>
+  <div th:insert="~{../fragmentos/general.html :: header}"></div>
+  <main>
+    <h2>Usuarios</h2>
+    <a href="/admin/usuarios/add">Añadir usuario</a>
+    <ul>
+      <li th:each="u : ${usuarios}">
+        <span th:text="${u.username}">usuario</span> - <span th:text="${u.email}">email</span>
+        - <a th:href="@{/admin/usuarios/edit/{id}(id=${u.id})}">Editar</a>
+        - <a th:href="@{/admin/usuarios/delete/{id}(id=${u.id})}">Eliminar</a>
+        - <a th:href="@{/admin/usuarios/{id}/telefonos(id=${u.id})}">Teléfonos</a>
+        - <a th:href="@{/admin/usuarios/{id}/direcciones(id=${u.id})}">Direcciones</a>
+      </li>
+    </ul>
+  </main>
+  <div th:insert="~{../fragmentos/general.html :: footer}"></div>
+</body>
+</html>

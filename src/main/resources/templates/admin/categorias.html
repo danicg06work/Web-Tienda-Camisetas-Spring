@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Categorías</title>
+</head>
+<body>
+    <div th:insert="~{../fragmentos/general.html :: header}"></div>
+
+    <main>
+        <h2>Categorías</h2>
+        <a href="/admin/categoria/add">Añadir categoría</a>
+        <ul>
+            <li th:each="cat : ${categorias}">
+                <span th:text="${cat.nombre}">Nombre</span>
+                - <a th:href="@{/admin/categoria/hijos/{id}(id=${cat.id})}">Ver hijos</a>
+                - <a th:href="@{/admin/categoria/edit/{id}(id=${cat.id})}">Editar</a>
+                - <a th:href="@{/admin/categoria/delete/{id}(id=${cat.id})}">Eliminar</a>
+            </li>
+        </ul>
+    </main>
+
+    <div th:insert="~{../fragmentos/general.html :: footer}"></div>
+</body>
+</html>

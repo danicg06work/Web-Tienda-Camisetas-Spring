@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar pedido</title>
+</head>
+<body>
+    <div th:insert="~{fragmentos/general.html :: header}"></div>
+
+    <main>
+        <h2>Confirmar pedido</h2>
+        <div>
+            <p>Total: <span th:text="${total}">0</span> €</p>
+        </div>
+
+        <form th:action="@{/carro/confirmar}" method="post" th:object="${pedido}">
+            <input type="hidden" th:field="*{id}" />
+            <label>Dirección:</label>
+            <select name="direccion" th:each="d : ${direcciones}">
+                <option th:value="${d.id}" th:text="${d.calle}">Dirección</option>
+            </select>
+            <label>Teléfono:</label>
+            <select name="telefono" th:each="t : ${telefonos}">
+                <option th:value="${t.id}" th:text="${t.numero}">Teléfono</option>
+            </select>
+            <button type="submit">Confirmar pedido</button>
+        </form>
+    </main>
+
+    <div th:insert="~{fragmentos/general.html :: footer}"></div>
+</body>
+</html>

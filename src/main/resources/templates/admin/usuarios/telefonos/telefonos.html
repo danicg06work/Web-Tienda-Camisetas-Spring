@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telefonos del usuario</title>
+</head>
+<body>
+  <div th:insert="~{../../fragmentos/general.html :: header}"></div>
+  <main>
+    <h2>Teléfonos de <span th:text="${usuarioActual.username}">usuario</span></h2>
+    <a th:href="@{/admin/usuarios/{id}/telefonos/add(id=${usuarioActual.id})}">Añadir teléfono</a>
+    <ul>
+      <li th:each="t : ${telefonos}">
+        <span th:text="${t.numero}">000</span>
+        - <a th:href="@{/admin/usuarios/{idUser}/telefonos/{idTel}/edit(idUser=${usuarioActual.id},idTel=${t.id})}">Editar</a>
+        - <a th:href="@{/admin/usuarios/{idUser}/telefonos/{idTel}/delete(idUser=${usuarioActual.id},idTel=${t.id})}">Eliminar</a>
+      </li>
+    </ul>
+  </main>
+  <div th:insert="~{../../fragmentos/general.html :: footer}"></div>
+</body>
+</html>
