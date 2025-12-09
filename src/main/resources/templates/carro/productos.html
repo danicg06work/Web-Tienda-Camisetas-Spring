@@ -10,15 +10,28 @@
     <!-- HEADER -->
     <div th:insert="~{fragmentos/general.html :: header}"></div>
 
+    <!-- NAVEGACIÓN DE CATEGORÍAS -->
+    <nav class="categorias-nav">
+        <ul class="categorias">
+            <li>
+                <a th:href="@{/productos}">Todas</a>
+            </li>
+            <li th:each="cat : ${categorias}">
+                <a th:href="@{/productos/categoria/{id}(id=${cat.id})}" 
+                   th:text="${cat.nombre}">Categoria</a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- CONTENIDO PRINCIPAL -->
     <main>
         <h2>Productos disponibles</h2>
 
-        <div th:if="${camisetas == null}">
+        <div th:if="${camisetas == null or #lists.isEmpty(camisetas)}">
             <p>No hay productos disponibles.</p>
         </div>
 
-        <ul>
+        <ul class="productos">
             <li th:each="c : ${camisetas}">
                 <img src="/img/camiseta.webp" alt="camiseta">
                 <h3 th:text="${c.nombre}">Nombre</h3>
