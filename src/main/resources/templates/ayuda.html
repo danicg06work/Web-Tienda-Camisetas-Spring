@@ -4,13 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayuda</title>
+    <link rel="stylesheet" href="/css/ayuda.css">
 </head>
 <body>
     <div th:insert="~{fragmentos/general.html :: header}"></div>
+
     <main>
-        <h2>Ayuda</h2>
-        <p>Página de ayuda básica.</p>
+        <h2>Ayuda y soporte</h2>
+        <p>Bienvenido a la sección de ayuda de nuestra tienda de camisetas. Aquí encontrarás toda la información que necesitas para navegar, comprar y gestionar tus pedidos.</p>
+
+        <section>
+            <h3>Preguntas frecuentes (FAQ)</h3>
+            <ul>
+                <li><strong>¿Cómo puedo registrarme?</strong>
+                    <p>Para registrarte, haz clic en el botón "Registro" en la parte superior y completa el formulario con tus datos. Asegúrate de introducir un email válido y una contraseña segura.</p>
+                </li>
+                <li><strong>¿Cómo añadir productos al carrito?</strong>
+                    <p>Ve a la sección de productos, selecciona la camiseta que te guste y pulsa "Añadir al carrito". Puedes ajustar la cantidad antes de añadirla.</p>
+                </li>
+                <li><strong>¿Cómo eliminar un producto del carrito?</strong>
+                    <p>En el carrito de compras, pulsa el botón "Eliminar" junto al producto que quieras quitar. Aparecerá un mensaje de confirmación antes de borrarlo definitivamente.</p>
+                </li>
+                <li><strong>¿Puedo editar la cantidad de productos en el carrito?</strong>
+                    <p>Sí, dentro del carrito puedes pulsar "Editar" y ajustar la cantidad de cada artículo antes de confirmar los cambios.</p>
+                </li>
+                <li><strong>¿Cómo confirmar un pedido?</strong>
+                    <p>Una vez que tengas todos los productos que deseas, ve al carrito y pulsa "Confirmar pedido". Deberás seleccionar dirección y teléfono antes de finalizar.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Consejos de compra</h3>
+            <p>Para garantizar una experiencia óptima, recomendamos:</p>
+            <ul>
+                <li>Revisar bien las tallas antes de añadir productos al carrito.</li>
+                <li>Verificar la disponibilidad del producto.</li>
+                <li>Completar todos los campos del formulario de registro correctamente.</li>
+                <li>Consultar las políticas de devolución antes de comprar.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Políticas y términos</h3>
+            <p>Nuestra tienda se rige por las siguientes normas:</p>
+            <ul>
+                <li>Todos los productos son enviados dentro de 2-5 días laborables.</li>
+                <li>Ofrecemos devolución gratuita en un plazo de 14 días desde la recepción.</li>
+                <li>Los pagos son seguros y están cifrados mediante protocolo HTTPS.</li>
+                <li>Nos reservamos el derecho de modificar precios y ofertas sin previo aviso.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Contacta con nosotros</h3>
+            <p>Si necesitas asistencia personalizada, no dudes en enviarnos un correo electrónico a <strong>soporte@tiendacamisetas.com</strong> o llamarnos al <strong>+34 600 123 456</strong>. Nuestro equipo de soporte está disponible de lunes a viernes de 9:00 a 18:00.</p>
+        </section>
+
+        <section>
+            <h3>Guía rápida de navegación</h3>
+            <p>Puedes acceder a todas las secciones de nuestra tienda usando el menú superior:</p>
+            <ul>
+                <li><strong>Inicio:</strong> Bienvenida y novedades.</li>
+                <li><strong>Productos:</strong> Catálogo completo de camisetas.</li>
+                <li><strong>Carrito:</strong> Ver y gestionar los productos seleccionados.</li>
+                <li><strong>Mis pedidos:</strong> Revisión de pedidos anteriores y detalles.</li>
+                <li><strong>Perfil:</strong> Gestiona tus datos de usuario.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Información adicional</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Sed vitae turpis in sapien luctus euismod. Suspendisse potenti. Aenean vel tincidunt est. Integer vehicula diam nec felis fermentum, ut cursus mi fermentum. Curabitur sit amet justo sapien. Morbi luctus justo non risus facilisis, in mollis ligula cursus. Sed a dui vel elit posuere gravida. Vivamus pharetra velit nec erat elementum, vel tincidunt nulla rhoncus.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Nam id velit eget odio commodo hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent eu neque nec justo gravida vestibulum. Donec sit amet facilisis eros. Integer ac ligula quis sapien imperdiet euismod.</p>
+        </section>
     </main>
+
     <div th:insert="~{fragmentos/general.html :: footer}"></div>
 </body>
 </html>
+

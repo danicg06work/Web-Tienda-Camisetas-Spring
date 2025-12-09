@@ -1,0 +1,183 @@
+/* ================================
+   RESET Y ESTILOS GENERALES
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    color: #2f3640;
+    line-height: 1.6;
+}
+
+/* ================================
+   HEADER Y NAVBAR
+================================= */
+header {
+    background: #8226ad;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a,
+nav ul li button {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ================================
+   MAIN - AYUDA CON MUCHO CONTENIDO
+================================= */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #8226ad;
+    text-align: center;
+}
+
+main h3 {
+    font-size: 1.6rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #5e1a87;
+}
+
+main p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+main ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+main ul li {
+    margin-bottom: 12px;
+}
+
+main ul li p {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+main strong {
+    color: #8226ad;
+}
+
+/* ================================
+   FOOTER
+================================= */
+footer {
+    margin-top: 50px;
+    background: #2f3640;
+    color: #dcdde1;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer ul li a {
+    color: #dcdde1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: #8226ad;
+}
+
+footer p strong {
+    color: #8226ad;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+/* ================================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    main {
+        width: 95%;
+        margin: 50px auto;
+        padding: 25px 20px;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+
+    main h3 {
+        font-size: 1.3rem;
+    }
+}

@@ -4,13 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de</title>
+    <link rel="stylesheet" href="/css/acerca.css">
 </head>
 <body>
     <div th:insert="~{fragmentos/general.html :: header}"></div>
+
     <main>
         <h2>Acerca de este proyecto</h2>
-        <p>Proyecto de ejemplo - Tienda de camisetas.</p>
+        <p>Este proyecto es un ejemplo completo de una tienda de camisetas online, desarrollado para demostrar la integración de HTML, CSS, Thymeleaf y buenas prácticas de diseño web.</p>
+
+        <section>
+            <h3>Objetivo del proyecto</h3>
+            <p>El objetivo principal es ofrecer una plataforma sencilla y funcional donde los usuarios puedan:</p>
+            <ul>
+                <li>Explorar el catálogo de camisetas.</li>
+                <li>Añadir productos al carrito y gestionarlo fácilmente.</li>
+                <li>Confirmar y revisar pedidos anteriores.</li>
+                <li>Registrarse y gestionar su perfil de usuario.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Tecnologías utilizadas</h3>
+            <p>Para construir esta tienda se utilizaron varias tecnologías modernas y robustas:</p>
+            <ul>
+                <li><strong>HTML5:</strong> Estructura semántica de la página.</li>
+                <li><strong>CSS3:</strong> Estilos y diseño responsivo.</li>
+                <li><strong>Thymeleaf:</strong> Motor de plantillas para la integración con Java Spring Boot.</li>
+                <li><strong>Java Spring Boot:</strong> Lógica del backend y gestión de datos.</li>
+                <li><strong>Responsive Design:</strong> Adaptación a móviles y tablets.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Equipo de desarrollo</h3>
+            <p>Este proyecto fue realizado por un equipo ficticio de desarrollo con roles definidos:</p>
+            <ul>
+                <li>Frontend: Diseño de la interfaz, HTML y CSS.</li>
+                <li>Backend: Implementación de la lógica de negocio y conexión con la base de datos.</li>
+                <li>QA: Pruebas funcionales y de usabilidad.</li>
+                <li>Documentación: Creación de guías y manuales de usuario.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Detalles adicionales</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet purus sed massa ullamcorper tristique. Curabitur at leo et elit finibus tincidunt. Phasellus nec leo in urna bibendum fringilla. Vivamus laoreet, erat nec dignissim cursus, lorem justo imperdiet odio, nec volutpat lectus purus a justo. Donec non nisl et mi tempor fermentum. Proin dignissim mauris ac erat dictum, ut feugiat odio porta.</p>
+
+            <p>Aliquam erat volutpat. Quisque at odio nec risus pharetra sollicitudin. Fusce at lectus in sapien vestibulum rhoncus. In hac habitasse platea dictumst. Donec et ex id nunc hendrerit sodales. Sed in urna sit amet est tempus tempus. Maecenas a libero vehicula, semper leo vitae, lacinia magna.</p>
+
+            <p>Morbi accumsan, odio at vulputate fringilla, lorem ex imperdiet urna, sed pharetra felis lacus id nisl. Integer ac elit nec libero facilisis pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur non elit a nunc vehicula blandit sed nec metus.</p>
+        </section>
     </main>
+
     <div th:insert="~{fragmentos/general.html :: footer}"></div>
 </body>
 </html>
