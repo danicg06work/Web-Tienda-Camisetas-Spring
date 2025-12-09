@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="/css/carro.css">
+</head>
+<body>
+    <div th:insert="~{fragmentos/general.html :: header}"></div>
+
+    <main>
+        <h2>Tu carrito</h2>
+        <div th:if="${lineapedidos == null}">
+            <p>El carrito está vacío.</p>
+        </div>
+        <table th:if="${lineapedidos != null}">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio unit.</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="lp : ${lineapedidos}">
+                    <td th:text="${lp.camiseta.nombre}">Nombre</td>
+                    <td th:text="${lp.cantidad}">1</td>
+                    <td th:text="${lp.camiseta.precio}">0.0</td>
+                    <td>
+                        <a th:href="@{/carro/edit/{id}(id=${lp.id})}">Editar</a>
+                        |
+                        <a th:href="@{/carro/del/{id}(id=${lp.id})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <p>Total: <span th:text="${total}">0</span> €</p>
+            <a href="/carro/confirmar">Confirmar pedido</a>
+        </div>
+    </main>
+
+    <div th:insert="~{fragmentos/general.html :: footer}"></div>
+</body>
+</html>

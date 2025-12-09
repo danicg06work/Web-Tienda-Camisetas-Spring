@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/css/productos.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:insert="~{fragmentos/general.html :: header}"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <h2>Productos disponibles</h2>
+
+        <div th:if="${camisetas == null}">
+            <p>No hay productos disponibles.</p>
+        </div>
+
+        <ul>
+            <li th:each="c : ${camisetas}">
+                <img src="/img/camiseta.webp" alt="camiseta">
+                <h3 th:text="${c.nombre}">Nombre</h3>
+                <p class="precio">
+                    <span th:text="${c.precio}">0.00</span> €
+                </p>
+                <div class="boton-carrito">
+                    <a th:href="@{/carro/add/{id}(id=${c.id})}">Añadir al carrito</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <!-- FOOTER -->
+    <div th:insert="~{fragmentos/general.html :: footer}"></div>
+</body>
+</html>

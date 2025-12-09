@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisetas por categoría</title>
+</head>
+<body>
+    <div th:insert="~{../fragmentos/general.html :: header}"></div>
+
+    <main>
+        <h2 th:text="${categoria != null} ? ${categoria.nombre} : 'Todas las camisetas'">Categoría</h2>
+        <div>
+            <p>Categorías:</p>
+            <ul>
+                <li th:each="cat : ${categorias}"><a th:href="@{/admin/camiseta/categoria/{id}(id=${cat.id})}" th:text="${cat.nombre}">Cat</a></li>
+            </ul>
+        </div>
+
+        <ul>
+            <li th:each="c : ${camisetas}">
+                <span th:text="${c.nombre}">Nombre</span> - <span th:text="${c.precio}">0</span> €
+            </li>
+        </ul>
+    </main>
+
+    <div th:insert="~{../fragmentos/general.html :: footer}"></div>
+</body>
+</html>

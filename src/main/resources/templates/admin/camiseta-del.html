@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar camiseta</title>
+</head>
+<body>
+    <div th:insert="~{../fragmentos/general.html :: header}"></div>
+    <main>
+        <h2>Eliminar camiseta</h2>
+        <p>¿Eliminar <span th:text="${camiseta.nombre}">Nombre</span>?</p>
+        <form th:action="@{/admin/camiseta/delete/{id}(id=${camiseta.id})}" method="post">
+            <button type="submit">Eliminar</button>
+        </form>
+    </main>
+    <div th:insert="~{../fragmentos/general.html :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir usuario</title>
+</head>
+<body>
+  <div th:insert="~{../fragmentos/general.html :: header}"></div>
+  <main>
+    <h2>Añadir/Editar usuario</h2>
+    <form th:action="@{/admin/usuarios/add}" method="post" th:object="${usuario}">
+      <input type="hidden" th:field="*{id}" />
+      <label>Nombre:</label>
+      <input type="text" th:field="*{nombre}" required /><br/>
+      <label>Apellido:</label>
+      <input type="text" th:field="*{apellido}" required /><br/>
+      <label>Usuario:</label>
+      <input type="text" th:field="*{username}" required /><br/>
+      <label>Email:</label>
+      <input type="email" th:field="*{email}" required /><br/>
+      <label>Contraseña:</label>
+      <input type="password" th:field="*{password}" /><br/>
+      <label>Roles:</label>
+      <div th:each="r : ${listaRoles}">
+        <label>
+          <input type="checkbox" name="roles_usuario" th:value="${r}" th:checked="${#lists.contains(usuarioRoles, r)}" />
+          <span th:text="${r}">ROL</span>
+        </label>
+      </div>
+      <button type="submit">Guardar</button>
+    </form>
+  </main>
+  <div th:insert="~{../fragmentos/general.html :: footer}"></div>
+</body>
+</html>

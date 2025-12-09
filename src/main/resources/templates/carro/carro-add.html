@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir al carrito</title>
+    <link rel="stylesheet" href="/css/carro-add.css">
+</head>
+<body>
+    <div th:insert="~{fragmentos/general.html :: header}"></div>
+
+    <main>
+        <h2 th:text="${camiseta.nombre}">Producto</h2>
+        <p th:text="${camiseta.descripcion}">Descripción</p>
+        <p>Precio: <span th:text="${camiseta.precio}">0.0</span> €</p>
+
+        <form th:action="@{/carro/add/{id}(id=${camiseta.id})}" method="post">
+            <label>Cantidad:</label>
+            <input type="number" name="cantidad" value="1" min="1" required />
+            <button type="submit">Añadir</button>
+        </form>
+    </main>
+
+    <div th:insert="~{fragmentos/general.html :: footer}"></div>
+</body>
+</html>

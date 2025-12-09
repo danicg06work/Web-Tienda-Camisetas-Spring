@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Camisetas</title>
+</head>
+<body>
+    <div th:insert="~{../fragmentos/general.html :: header}"></div>
+
+    <main>
+        <h2>Listado de camisetas</h2>
+        <a href="/admin/camiseta/add">Añadir nueva camiseta</a>
+        <ul>
+            <li th:each="c : ${camisetas}">
+                <strong th:text="${c.nombre}">Nombre</strong>
+                - <span th:text="${c.precio}">0</span> €
+                - <a th:href="@{/admin/camiseta/edit/{id}(id=${c.id})}">Editar</a>
+                - <a th:href="@{/admin/camiseta/delete/{id}(id=${c.id})}">Eliminar</a>
+            </li>
+        </ul>
+    </main>
+
+    <div th:insert="~{../fragmentos/general.html :: footer}"></div>
+</body>
+</html>
